@@ -403,6 +403,36 @@ W<span class="style45">elcome~!</span>
                                       </asp:UpdateProgress>
                                   </td>
                               </tr>
+
+                              <tr>
+  <td colspan="3" valign="top">
+    <div style="margin-top:20px; border:1px solid #ccc; padding:10px; width:400px;">
+      <strong>Student Search Box</strong><br /><br />
+      <table>
+        <tr>
+          <td><label for="txtSurname">Surname:</label></td>
+          <td>
+            <asp:TextBox ID="txtSurname" runat="server" Width="120px"></asp:TextBox>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="txtGivenName">Given name:</label></td>
+          <td>
+            <asp:TextBox ID="txtGivenName" runat="server" Width="120px"></asp:TextBox>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <!-- Adding extra margin-top to increase spacing before the button -->
+            <div style="margin-top:20px;">
+              <asp:Button ID="btnSearchStudent" runat="server" Text="Search" />
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </td>
+</tr>
                           </table>
                           <!--
 <script src='Chart/Chart.bundle.js'></script>
