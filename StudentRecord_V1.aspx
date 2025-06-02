@@ -410,8 +410,10 @@ W<span class="style45">elcome~!</span>
                                       </asp:UpdateProgress>
                                   </td>
                               </tr>
+                          </table>
 
-                              <tr>
+                          <table>
+                            <tr>
   <td colspan="3" valign="top">
     <div style="margin-top:20px; border:1px solid #ccc; padding:10px; width:400px;">
       <strong>Student Search Box</strong><br /><br />
@@ -440,8 +442,9 @@ W<span class="style45">elcome~!</span>
     </div>
     
     <br />
-
+    
     <div style="margin-top:20px; width:800px; visibility:hidden">
+    <h3>Search Result</h3>
     <table class="table-results">
     <thead>
       <tr>
