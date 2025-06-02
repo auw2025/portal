@@ -5,6 +5,13 @@
 <head runat="server">
     <title>TSSS School Portal</title>
     <style type="text/css">
+    .table-results, .table-results th,.table-results td {
+        border: solid 1px #ccc;
+        border-collapse: collapse;
+    }
+    .table-results td {
+        padding: 20px;
+    }
 <!--
 .style30 {
 	font-size: small;
@@ -431,6 +438,67 @@ W<span class="style45">elcome~!</span>
         </tr>
       </table>
     </div>
+    
+    <br />
+
+    <div style="margin-top:20px; width:800px; visibility:hidden">
+    <table class="table-results">
+    <thead>
+      <tr>
+        <th>TsssID</th>
+        <th>Surname</th>
+        <th>Name</th>
+        <th>Common English</th>
+        <th>Chinese Name</th>
+        <th>First Day in TSSS</th>
+        <th>Leave Date</th>
+        <th>Reason for Leaving</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#" title="copy this ID to the box">1001</a></td>
+        <td>Smith</td>
+        <td>John</td>
+        <td>Johnny</td>
+        <td>約翰</td>
+        <td>10/10/2018</td>
+        <td>10/10/2024</td>
+        <td>Graduated</td>
+      </tr>
+      <tr>
+        <td><a href="#" title="copy this ID to the box">1002</a></td>
+        <td>Doe</td>
+        <td>Jane</td>
+        <td>Janie</td>
+        <td>珍</td>
+        <td>15/05/2017</td>
+        <td>15/05/2023</td>
+        <td>Transferred to Another School</td>
+      </tr>
+      <tr>
+        <td><a href="#" title="copy this ID to the box">1003</a></td>
+        <td>Brown</td>
+        <td>Charlie</td>
+        <td>Chuck</td>
+        <td>查理</td>
+        <td>10/03/2016</td>
+        <td>10/03/2022</td>
+        <td>Withdrawn</td>
+      </tr>
+      <tr>
+        <td><a href="#" title="copy this ID to the box">1004</a></td>
+        <td>Lee</td>
+        <td>Anna</td>
+        <td>Annie</td>
+        <td>安娜</td>
+        <td>20/04/2015</td>
+        <td>20/04/2021</td>
+        <td>Dropped Out</td>
+      </tr>
+    </tbody>
+  </table>
+</div>    
   </td>
 </tr>
                           </table>
