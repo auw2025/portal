@@ -1457,13 +1457,18 @@ Partial Class StudentRecord
     End Sub
 
     'When the user picks a row, copy its TSSS-ID into TextBox1
-    Protected Sub gvSearchResult_SelectedIndexChanged(ByVal sender As Object,
-                                                    ByVal e As EventArgs)
+    Protected Sub gvSearchResult_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
         Dim id As String = gvSearchResult.SelectedDataKey.Value.ToString()
-
+        
+        ' Copy the selected ID into the textbox
         TextBox1.Text = id
-        BtnViewStudentRecord.Enabled = True   'enable your existing button
-        gvSearchResult.Visible = False        'optional – hide the grid
+        
+        ' Enable the button (if needed) and hide the grid (if desired)
+        BtnViewStudentRecord.Enabled = True   
+        gvSearchResult.Visible = False
+
+        ' Automatically trigger the click event for 'View this student'
+        BtnViewStudentRecord_Click(BtnViewStudentRecord, New EventArgs())
     End Sub
 
     'Jump to first page after a new sort.
