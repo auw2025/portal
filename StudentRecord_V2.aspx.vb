@@ -809,34 +809,45 @@ Partial Class StudentRecord
                     sys_db2 = Nothing
                 End If
         ElseIf Me.BtnViewStudentRecord.Text = "View another student" Then
-                Response.Redirect("https://www.tsss.edu.hk/sims_ex/StudentRecord_v2.aspx")
-                Me.Panel3.Visible = False
-                Me.BtnViewStudentRecord.Text = "View this student"
-                Me.TextBox1.Enabled = True
-                Me.LBtnGetTsssId.Enabled = True
-                Me.Panel2.Visible = False
-                Me.TextBox1.Text = ""
-                'Me.LabelNoElect.Visible = False '***
-                Me.LabelNoCP.Visible = False '***
-                Me.LabelNoCI.Visible = False '***
-                Me.LabelNoPP.Visible = False '***
-                'Me.LabelNoARS.Visible = False '***
-                Me.LabelNoARG_Current.Visible = False '***
-                Me.LabelNoARG.Visible = False '***
-                Me.LabelNoCOLE.Visible = False '***
-                Me.LabelNoPOLE.Visible = False '***
-                Me.LabelNoCAttend.Visible = False '***
-                Me.LabelWarning.Visible = False
-                Me.LabelPrevParts.Visible = False
-                Me.LabelPOLE.Visible = False
-                Me.LabelEmpty1.Visible = False
-                Me.LabelEmpty2.Visible = False
-                Me.LabelEmpty3.Visible = False
-                Me.LabelEmpty4.Visible = False
-                Me.LabelEmpty5.Visible = False
-                Me.LabelEmpty6.Visible = False
-                Me.Image1.Visible = False
-            End If
+
+            
+            Me.Panel3.Visible = False      '放成績／相片等的 Panel
+            Me.Image1.Visible = False      '相片
+            Me.LabelWarning.Visible = False
+
+            Me.LabelNoCP.Visible  = False
+            Me.LabelNoCI.Visible  = False
+            Me.LabelNoPP.Visible  = False
+            Me.LabelNoARG.Visible = False
+            Me.LabelNoARG_Current.Visible = False
+            Me.LabelNoCOLE.Visible = False
+            Me.LabelNoPOLE.Visible = False
+            Me.LabelNoCAttend.Visible = False
+            Me.LabelPrevParts.Visible = False
+            Me.LabelPOLE.Visible = False
+            Me.LabelEmpty1.Visible = False
+            Me.LabelEmpty2.Visible = False
+            Me.LabelEmpty3.Visible = False
+            Me.LabelEmpty4.Visible = False
+            Me.LabelEmpty5.Visible = False
+            Me.LabelEmpty6.Visible = False
+
+            
+            Me.Panel2.Visible = True           
+            Me.gvSearchResult.Visible = True   
+            Me.gvSearchResult.DataBind()       
+
+            
+            Me.BtnViewStudentRecord.Text = "View this student"
+            Me.BtnViewStudentRecord.Enabled = False   '讓使用者重新在 GridView 選擇學生後才啟用
+
+            
+            Me.TextBox1.Enabled = True
+            Me.LBtnGetTsssId.Enabled = True
+
+            Panel2.Visible = False
+
+        End If
 
             ' Hide the Student Search Box panel
             PanelSearchBox.Visible = False
