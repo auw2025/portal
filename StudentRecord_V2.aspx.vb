@@ -27,7 +27,7 @@ Partial Class StudentRecord
         'Me.LiteralCW2.Text = "['KKK', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July']"
 
         If Not IsPostBack Then
-            BtnViewStudentRecord.Enabled = False   '先把「View」按鈕關掉
+            BtnViewStudentRecord.Enabled = False   
             gvSearchResult.Visible = False
         End If
         
@@ -246,6 +246,7 @@ Partial Class StudentRecord
 
         If Me.BtnViewStudentRecord.Text = "View this student" Then
             'System.Threading.Thread.Sleep(1000)
+            Me.gvSearchResult.Visible = False
             If Me.TextBox1.Text = "N/A" Or Me.TextBox1.Text = "" Then
                 Me.LabelWarning.Text = "Student not exist."
                 Me.LabelWarning.Visible = True
@@ -839,7 +840,7 @@ Partial Class StudentRecord
 
             
             Me.BtnViewStudentRecord.Text = "View this student"
-            Me.BtnViewStudentRecord.Enabled = False   '讓使用者重新在 GridView 選擇學生後才啟用
+            Me.BtnViewStudentRecord.Enabled = False   
 
             
             Me.TextBox1.Enabled = True
