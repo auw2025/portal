@@ -838,6 +838,9 @@ Partial Class StudentRecord
                 Me.Image1.Visible = False
             End If
 
+            ' Hide the Student Search Box panel
+            PanelSearchBox.Visible = False
+
     End Sub
 
     Protected Sub LBtnGetTsssId_Click(ByVal sender As Object, ByVal e As System.EventArgs)

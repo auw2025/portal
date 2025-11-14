@@ -414,43 +414,43 @@ W<span class="style45">elcome~!</span>
 
 <asp:UpdatePanel ID="upSearch" runat="server">
     <ContentTemplate>
+        <!-- Wrap the Student Search Box in a Panel so we can hide it later -->
+        <asp:Panel ID="PanelSearchBox" runat="server">
+            <div style="border:1px solid #ccc;padding:12px;width:420px;">
+                <strong>Student Search Box</strong><br /><br />
+                <table>
+                    <tr>
+                        <td>Surname&nbsp;</td>
+                        <td>
+                            <asp:TextBox ID="txtSurname" runat="server" Width="130px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Given name&nbsp;</td>
+                        <td>
+                            <asp:TextBox ID="txtGivenName" runat="server" Width="130px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Common English&nbsp;</td>
+                        <td>
+                            <asp:TextBox ID="txtCommonEnglish" runat="server" Width="130px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-top:12px">
+                            <asp:Button ID="btnSearchStudent"
+                                        runat="server"
+                                        Text="Search"
+                                        OnClick="btnSearchStudent_Click" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+        </asp:Panel>
 
-        <div style="border:1px solid #ccc;padding:12px;width:420px;">
-            <strong>Student Search Box</strong><br /><br />
-
-            <table>
-                <tr>
-                    <td>Surname&nbsp;</td>
-                    <td>
-                        <asp:TextBox ID="txtSurname" runat="server" Width="130px" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Given name&nbsp;</td>
-                    <td>
-                        <asp:TextBox ID="txtGivenName" runat="server" Width="130px" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Common English&nbsp;</td>
-                    <td>
-                        <asp:TextBox ID="txtCommonEnglish" runat="server" Width="130px" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="padding-top:12px">
-                        <asp:Button ID="btnSearchStudent"
-                                    runat="server"
-                                    Text="Search"
-                                    OnClick="btnSearchStudent_Click" />
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <br />
-
-        <!-- NEW: AllowPaging + PageSize + PageIndexChanging -->
+        <!-- Search Result GridView -->
         <asp:GridView ID="gvSearchResult"
                       runat="server"
                       AutoGenerateColumns="False"
@@ -464,7 +464,6 @@ W<span class="style45">elcome~!</span>
                       OnSorting="gvSearchResult_Sorting"
                       OnPageIndexChanging="gvSearchResult_PageIndexChanging"
                       OnSelectedIndexChanged="gvSearchResult_SelectedIndexChanged">
-
             <Columns>
                 <asp:TemplateField HeaderText="TSSS-ID" SortExpression="tsss_id">
                     <ItemTemplate>
@@ -483,11 +482,8 @@ W<span class="style45">elcome~!</span>
                 <asp:BoundField DataField="ClassNo"        HeaderText="Class No."   SortExpression="ClassNo" />
                 <asp:BoundField DataField="year"           HeaderText="Year"    SortExpression="year" />
             </Columns>
-
         </asp:GridView>
-
     </ContentTemplate>
-
     <Triggers>
         <asp:PostBackTrigger ControlID="btnSearchStudent" />
     </Triggers>
