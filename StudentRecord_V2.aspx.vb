@@ -27,7 +27,7 @@ Partial Class StudentRecord
         'Me.LiteralCW2.Text = "['KKK', 'February', 'March', 'April', 'May', 'June', 'July', 'January', 'February', 'March', 'April', 'May', 'June', 'July']"
 
         If Not IsPostBack Then
-            BtnViewStudentRecord.Enabled = False   
+            ' BtnViewStudentRecord.Enabled = False   
             gvSearchResult.Visible = False
         End If
         
@@ -246,6 +246,7 @@ Partial Class StudentRecord
 
         If Me.BtnViewStudentRecord.Text = "View this student" Then
             'System.Threading.Thread.Sleep(1000)
+            PanelSearchBox.Visible = False
             Me.gvSearchResult.Visible = False
             If Me.TextBox1.Text = "N/A" Or Me.TextBox1.Text = "" Then
                 Me.LabelWarning.Text = "Student not exist."
@@ -848,10 +849,55 @@ Partial Class StudentRecord
 
             Panel2.Visible = False
 
+            
+            'reset details panel etc.
+            Panel3.Visible         = False
+            Image1.Visible         = False
+            LabelWarning.Visible   = False
+
+            LabelNoCP.Visible      = False : LabelNoCI.Visible      = False
+            LabelNoPP.Visible      = False : LabelNoARG.Visible     = False
+            LabelNoARG_Current.Visible = False
+            LabelNoCOLE.Visible    = False : LabelNoPOLE.Visible    = False
+            LabelNoCAttend.Visible = False
+            LabelPrevParts.Visible = False : LabelPOLE.Visible      = False
+            LabelEmpty1.Visible    = False : LabelEmpty2.Visible    = False
+            LabelEmpty3.Visible    = False : LabelEmpty4.Visible    = False
+            LabelEmpty5.Visible    = False : LabelEmpty6.Visible    = False
+
+            BtnViewStudentRecord.Enabled = True
+            'what to show depends on btnTrace
+            If btnTrace.Value = "0" Then
+                '   ––– user did NOT come from the search-grid –––
+                TextBox1.Text        = ""
+
+                PanelSearchBox.Visible = True   'show the search box
+                gvSearchResult.Visible = False  'hide old result
+            Else
+                '   ––– user HAS picked a row in the search-grid –––
+                PanelSearchBox.Visible = True  'keep search box hidden
+                gvSearchResult.Visible = True   'show previous result list
+            End If
+
+            'common housekeeping
+            BtnViewStudentRecord.Text    = "View this student"
+            
+            TextBox1.Enabled             = True
+            LBtnGetTsssId.Enabled        = True
+
+            'reset the flag for the next round
+            btnTrace.Value = "0"
+
         End If
 
             ' Hide the Student Search Box panel
-            PanelSearchBox.Visible = False
+            ' PanelSearchBox.Visible = False
+            If btnTrace.Value = "0" Then
+                
+                ' PanelSearchBox.Visible = False
+            Else
+                PanelSearchBox.Visible = False  'keep search box hidden
+            End If
 
     End Sub
 
@@ -1481,6 +1527,8 @@ Partial Class StudentRecord
         ' Enable the button (if needed) and hide the grid (if desired)
         BtnViewStudentRecord.Enabled = True   
         gvSearchResult.Visible = False
+
+        btnTrace.Value = "1"
 
         ' Automatically trigger the click event for 'View this student'
         BtnViewStudentRecord_Click(BtnViewStudentRecord, New EventArgs())

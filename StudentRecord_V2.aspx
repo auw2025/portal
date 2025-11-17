@@ -411,7 +411,7 @@ W<span class="style45">elcome~!</span>
                                   </td>
                               </tr>
                           </table>
-
+<asp:HiddenField ID="btnTrace" runat="server" Value="0" />
 <asp:UpdatePanel ID="upSearch" runat="server">
     <ContentTemplate>
         <!-- Wrap the Student Search Box in a Panel so we can hide it later -->
