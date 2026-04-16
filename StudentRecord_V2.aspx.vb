@@ -456,15 +456,20 @@ Partial Class StudentRecord
 
                     'Previous year Report Card
 
-                    If Left(Me.TextBox1.Text, 2) = "24" Then
+                    If Left(Me.TextBox1.Text, 2) = "25" Then
+                        Me.DropDownListKAA0.Items.Add("25-26 Term 1")
+                    ElseIf Left(Me.TextBox1.Text, 2) = "24" Then
+                        Me.DropDownListKAA0.Items.Add("25-26 Term 1")
                         Me.DropDownListKAA0.Items.Add("24-25 Year End")
                         Me.DropDownListKAA0.Items.Add("24-25 Term 1")
                     ElseIf Left(Me.TextBox1.Text, 2) = "23" Then
+                        Me.DropDownListKAA0.Items.Add("25-26 Term 1")
                         Me.DropDownListKAA0.Items.Add("24-25 Year End")
                         Me.DropDownListKAA0.Items.Add("24-25 Term 1")
                         Me.DropDownListKAA0.Items.Add("23-24 Year End")
                         Me.DropDownListKAA0.Items.Add("23-24 Term 1")
                     ElseIf Left(Me.TextBox1.Text, 2) = "22" Then
+                        Me.DropDownListKAA0.Items.Add("25-26 Term 1")
                         Me.DropDownListKAA0.Items.Add("24-25 Year End")
                         Me.DropDownListKAA0.Items.Add("24-25 Term 1")
                         Me.DropDownListKAA0.Items.Add("23-24 Year End")
@@ -472,6 +477,7 @@ Partial Class StudentRecord
                         Me.DropDownListKAA0.Items.Add("22-23 Year End")
                         Me.DropDownListKAA0.Items.Add("22-23 Term 1")
                     ElseIf Left(Me.TextBox1.Text, 2) = "21" Then
+                        Me.DropDownListKAA0.Items.Add("25-26 Term 1")
                         Me.DropDownListKAA0.Items.Add("24-25 Year End")
                         Me.DropDownListKAA0.Items.Add("24-25 Term 1")
                         Me.DropDownListKAA0.Items.Add("23-24 Year End")
@@ -481,6 +487,7 @@ Partial Class StudentRecord
                         Me.DropDownListKAA0.Items.Add("21-22 Year End")
                         Me.DropDownListKAA0.Items.Add("21-22 Term 1")
                     ElseIf Left(Me.TextBox1.Text, 2) = "20" Then
+                        Me.DropDownListKAA0.Items.Add("25-26 Term 1")
                         Me.DropDownListKAA0.Items.Add("24-25 Year End")
                         Me.DropDownListKAA0.Items.Add("24-25 Term 1")
                         Me.DropDownListKAA0.Items.Add("23-24 Year End")
@@ -493,6 +500,7 @@ Partial Class StudentRecord
                         Me.DropDownListKAA0.Items.Add("20-21 Year End")
                         Me.DropDownListKAA0.Items.Add("20-21 Term 1")
                     ElseIf Left(Me.TextBox1.Text, 2) = "19" Then
+                        Me.DropDownListKAA0.Items.Add("25-26 Term 1")
                         Me.DropDownListKAA0.Items.Add("24-25 Year End")
                         Me.DropDownListKAA0.Items.Add("24-25 Term 1")
                         Me.DropDownListKAA0.Items.Add("23-24 Year End")
@@ -506,6 +514,7 @@ Partial Class StudentRecord
                         Me.DropDownListKAA0.Items.Add("19-20 Year End")
                         Me.DropDownListKAA0.Items.Add("19-20 Term 1")
                     Else
+                        Me.DropDownListKAA0.Items.Add("25-26 Term 1")
                         Me.DropDownListKAA0.Items.Add("24-25 Year End")
                         Me.DropDownListKAA0.Items.Add("24-25 Term 1")
                         Me.DropDownListKAA0.Items.Add("23-24 Year End")
@@ -1493,6 +1502,8 @@ Partial Class StudentRecord
             Response.Redirect("https://www.tsss.edu.hk/sims_ex/StudentRecordOnlineReportCard20242025T1.aspx?pn=" + Me.TextBox1.Text)
         ElseIf Me.DropDownListKAA0.Text = "24-25 Year End" Then
             Response.Redirect("https://www.tsss.edu.hk/sims_ex/StudentRecordOnlineReportCard20242025T2.aspx?pn=" + Me.TextBox1.Text)
+        ElseIf Me.DropDownListKAA0.Text = "25-26 Term 1" Then
+            Response.Redirect("https://www.tsss.edu.hk/sims_ex/StudentRecordOnlineReportCard20252026T1.aspx?pn=" + Me.TextBox1.Text)
         Else
 
         End If
